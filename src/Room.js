@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './Room.css';
 
 function Room() {
     let [isLit, setLit] = useState(true)
@@ -16,10 +17,11 @@ function Room() {
     //const state = useState(true)
     //console.log("State = ", state);
     return (
-        <div>
+        <div className={`room ${isLit ? "lit" : "dark"}`} >
+            {/* <div className={"room " + (isLit ? "lit" : "dark")}></div> ---Old Method*/}
             This paragraph is {isLit ? "lit" : "dark"}
             <br />
-            Age is {age}
+            Age is { age}
             <br />
             <button onClick={() => setLit(!isLit)}> Toggle Light</button>
             <br />
@@ -27,7 +29,7 @@ function Room() {
                 console.log('Button Click');
                 setAge(++age)
             }}> Increase Age</button>
-        </div>
+        </div >
     );
 }
 
